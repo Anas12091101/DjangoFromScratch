@@ -11,13 +11,21 @@ SECRET_KEY = env(
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# DATABASES = {
+#     "default": env.db(
+#         "DATABASE_URL",
+#         default="postgres:///simplelogin",
+#     ),
+# }
 DATABASES = {
-    "default": env.db(
-        "DATABASE_URL",
-        default="postgres:///simplelogin",
-    ),
+    "default": {
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": env("POSTGRES_DB"),
+        "USER": env("POSTGRES_USER"),
+        "PASSWORD": env("POSTGRES_PASSWORD"),
+        "HOST": "db",
+    }
 }
-
 LOGIN_REDIRECT_URL = "JWTLogin:failure"
 
 
