@@ -34,6 +34,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["0.0.0.0"]
 
+AUTH_USER_MODEL = "JWTLogin.User"
 
 # Application definition
 
