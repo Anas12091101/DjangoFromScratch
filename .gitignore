@@ -1,5 +1,1 @@
 .env
-data/
-JWTLogin/__pycache__/
-conf/__pycache__/
-conf/settings/__pycache__/
